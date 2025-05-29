@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DocBridge extends StatelessWidget {
   final AppRouter appRouter;
-  const DocBridge({super.key , required this.appRouter});
+  const DocBridge({super.key, required this.appRouter});
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +14,16 @@ class DocBridge extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-     child: MaterialApp(
-       debugShowCheckedModeBanner: false,
-       title: 'Doc Bridge',
-       theme: ThemeData(
-         primaryColor: ColorsManager.mainBlue,
-         scaffoldBackgroundColor: Colors.white,
-       ),
-       initialRoute: Routes.onBoardingScreen,
-       onGenerateRoute: appRouter.generateRoute,
-     ),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Doc Bridge',
+        theme: ThemeData(
+          primaryColor: ColorsManager.mainBlue,
+          scaffoldBackgroundColor: Colors.white,
+        ),
+        initialRoute: Routes.onBoardingScreen,
+        onGenerateRoute: appRouter.generateRoute,
+      ),
     );
   }
 }

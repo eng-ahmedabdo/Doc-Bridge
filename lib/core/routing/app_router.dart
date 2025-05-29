@@ -5,11 +5,14 @@ import 'package:flutter/material.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
+    //this arguments to be passedin any screen like this ( arguments: ClassName ).
+    final arguments = settings.arguments;
+
     switch (settings.name) {
       case Routes.onBoardingScreen:
-        return MaterialPageRoute(builder: (_) =>  OnBoardingScreen(),);
+        return MaterialPageRoute(builder: (_) => OnBoardingScreen());
       case Routes.loginScreen:
-        return MaterialPageRoute(builder: (_) =>  LoginScreen(),);
+        return MaterialPageRoute(builder: (_) => LoginScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
