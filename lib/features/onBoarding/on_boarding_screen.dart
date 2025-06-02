@@ -14,14 +14,14 @@ class OnBoardingScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.only(top: 20.h, bottom: 20.h),
+            padding: EdgeInsets.only(top: 30.h, bottom: 30.h),
             child: Column(
               children: [
                 const DocLogoAndNamed(),
-                SizedBox(height: 20.h),
+                SizedBox(height: 30.h),
                 const DocImageAndText(),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  padding: EdgeInsets.symmetric(horizontal: 30.w),
                   child: Column(
                     children: [
                       Text(
@@ -29,7 +29,7 @@ class OnBoardingScreen extends StatelessWidget {
                         style: TextStyles.font13GrayRegular,
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(height: 20.h),
+                      SizedBox(height: 30.h),
                       const GetStartedButton(),
                     ],
                   ),
