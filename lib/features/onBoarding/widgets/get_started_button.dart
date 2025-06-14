@@ -19,7 +19,7 @@ class GetStartedButton extends StatelessWidget {
         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
         ),
-        maximumSize: WidgetStateProperty.all(const Size(double.infinity, 45)),
+        maximumSize: WidgetStateProperty.all(const Size(double.infinity, 60)),
       ),
       child: Center(
         child: Text('Get Started', style: TextStyles.font16WhiteMedium),
