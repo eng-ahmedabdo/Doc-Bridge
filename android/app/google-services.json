@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "47421516485",
+    "project_id": "doc-bridge-distribution",
+    "storage_bucket": "doc-bridge-distribution.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47421516485:android:af73b19d2d15192fbc9eac",
+        "android_client_info": {
+          "package_name": "com.example.doc_bridge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDioGnVqUKuHLGOlDM8vK_y032nAoz80Hs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
