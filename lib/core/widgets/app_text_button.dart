@@ -1,11 +1,12 @@
-import 'package:doc_bridge/core/theming/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../theming/colors.dart';
 
 class AppTextButton extends StatelessWidget {
   final double? borderRadius;
   final Color? backgroundColor;
-  final double? horizentalPadding;
+  final double? horizontalPadding;
   final double? verticalPadding;
   final double? buttonWidth;
   final double? buttonHeight;
@@ -16,10 +17,10 @@ class AppTextButton extends StatelessWidget {
     super.key,
     this.borderRadius,
     this.backgroundColor,
-    this.horizentalPadding,
+    this.horizontalPadding,
     this.verticalPadding,
-    this.buttonWidth,
     this.buttonHeight,
+    this.buttonWidth,
     required this.buttonText,
     required this.textStyle,
     required this.onPressed,
@@ -34,12 +35,12 @@ class AppTextButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(borderRadius ?? 16.0),
           ),
         ),
-        backgroundColor: WidgetStateProperty.all(
+        backgroundColor: WidgetStatePropertyAll(
           backgroundColor ?? ColorsManager.mainBlue,
         ),
         padding: WidgetStateProperty.all<EdgeInsets>(
           EdgeInsets.symmetric(
-            horizontal: horizentalPadding?.w ?? 12.w,
+            horizontal: horizontalPadding?.w ?? 12.w,
             vertical: verticalPadding?.h ?? 14.h,
           ),
         ),
@@ -47,8 +48,11 @@ class AppTextButton extends StatelessWidget {
           Size(buttonWidth?.w ?? double.maxFinite, buttonHeight ?? 50.h),
         ),
       ),
-
-      child: Text(buttonText, style: textStyle),
+      onPressed: onPressed,
+      child: Text(
+        buttonText,
+        style: textStyle,
+      ),
     );
   }
 }
