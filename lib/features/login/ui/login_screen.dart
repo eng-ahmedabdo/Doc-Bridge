@@ -2,10 +2,7 @@ import 'package:doc_bridge/core/helper/spacing.dart';
 import 'package:doc_bridge/core/theming/styles.dart';
 import 'package:doc_bridge/core/widgets/app_text_button.dart';
 import 'package:doc_bridge/core/widgets/app_text_form_field.dart';
-import 'package:doc_bridge/features/login/ui/widgets/already_have_account_text.dart';
-import 'package:doc_bridge/features/login/ui/widgets/terms_and_condition_text.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -84,5 +81,11 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  void validateThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginStates();
+    }
   }
 }

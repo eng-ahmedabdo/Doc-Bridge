@@ -12,7 +12,7 @@ class AppTextFormField extends StatelessWidget {
   final String hintText;
   final bool? isObscureText;
   final Color? backgroundColor;
-  final Widget? sufixIcon;
+
 
   const AppTextFormField({
     super.key,
@@ -23,13 +23,13 @@ class AppTextFormField extends StatelessWidget {
     this.hintStyle,
     required this.hintText,
     this.isObscureText,
-    this.sufixIcon,
-    this.backgroundColor,
+
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+
       decoration: InputDecoration(
         isDense: true,
         contentPadding:
@@ -53,9 +53,7 @@ class AppTextFormField extends StatelessWidget {
                 width: 1.3,
               ),
             ),
-        hintStyle: hintStyle ?? TextStyles.font14LightGrayRegular,
-        hintText: hintText,
-        suffixIcon: sufixIcon,
+
         fillColor: backgroundColor ?? ColorsManager.moreLightGray,
         filled: true,
       ),
