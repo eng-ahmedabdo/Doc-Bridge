@@ -4,7 +4,6 @@ default_platform(:android)
 platform :android do
   desc "Lane for Android Firebase App Distribution"
   lane :firebase_distribution do
-    gradle(task: "assembleRelease")
     sh "flutter clean"
     sh "flutter build apk --release --no-tree-shake-icons"
     firebase_app_distribution(
