@@ -1,6 +1,10 @@
+import 'package:doc_bridge/core/helper/spacing.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/doc_blue_container.dart';
+import 'widgets/doc_list_view.dart';
+import 'widgets/doc_speciality_list_view.dart';
+import 'widgets/doc_speciality_see_all.dart';
 import 'widgets/home_top_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -19,6 +23,12 @@ class HomeScreen extends StatelessWidget {
             children: [
               const HomeTopBar(),
               const DocBlueContainer(),
+              verticalSpace(16.0),
+              const DocSpecialitySeeAll(),
+              verticalSpace(16.0),
+              const DocSpecialityListView(),
+              verticalSpace(8),
+              const DocListView(),
             ],
           ),
         ),
