@@ -11,11 +11,10 @@ class AppTextFormField extends StatelessWidget {
   final TextStyle? hintStyle;
   final String hintText;
   final bool? isObscureText;
-  final Color? backgroundColor;
   final Widget? suffixIcon;
+  final Color? backgroundColor;
   final TextEditingController? controller;
   final Function(String?) validator;
-
   const AppTextFormField({
     super.key,
     this.contentPadding,
@@ -37,34 +36,37 @@ class AppTextFormField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
         isDense: true,
-        contentPadding:
-            contentPadding ??
+        contentPadding: contentPadding ??
             EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
-        focusedBorder:
-            focusedBorder ??
+        focusedBorder: focusedBorder ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.0),
               borderSide: const BorderSide(
                 color: ColorsManager.mainBlue,
                 width: 1.3,
               ),
-            ),
-        enabledBorder:
-            enabledBorder ??
-            OutlineInputBorder(
               borderRadius: BorderRadius.circular(16.0),
+            ),
+        enabledBorder: enabledBorder ??
+            OutlineInputBorder(
               borderSide: const BorderSide(
                 color: ColorsManager.lighterGray,
                 width: 1.3,
               ),
+              borderRadius: BorderRadius.circular(16.0),
             ),
         errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
           borderRadius: BorderRadius.circular(16.0),
-          borderSide: const BorderSide(color: Colors.red, width: 1.3),
         ),
         focusedErrorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
           borderRadius: BorderRadius.circular(16.0),
-          borderSide: const BorderSide(color: Colors.red, width: 1.3),
         ),
         hintStyle: hintStyle ?? TextStyles.font14LightGrayRegular,
         hintText: hintText,
