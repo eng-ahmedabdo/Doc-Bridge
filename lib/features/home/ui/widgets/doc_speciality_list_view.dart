@@ -1,12 +1,15 @@
-import 'package:doc_bridge/core/helper/spacing.dart';
-import 'package:doc_bridge/core/theming/colors.dart';
-import 'package:doc_bridge/core/theming/styles.dart';
+import 'package:doc_bridge/features/home/data/models/specilization_response_model.dart';
+import 'package:doc_bridge/features/home/ui/widgets/doc_speciality_list_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class DocSpecialityListView extends StatelessWidget {
-  const DocSpecialityListView({super.key});
+  final List<SpecializationsData?> specializationDataList;
+
+  const DocSpecialityListView({
+    super.key,
+    required this.specializationDataList,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,24 +17,10 @@ class DocSpecialityListView extends StatelessWidget {
       height: 100.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 8,
-        itemBuilder: (context, index) => Container(
-          padding: EdgeInsetsDirectional.only(start: index == 0 ? 0 : 24.w),
-          child: Column(
-            children: [
-              CircleAvatar(
-                backgroundColor: ColorsManager.lightBlue,
-                radius: 28.sp,
-                child: SvgPicture.asset(
-                  'assets/svgs/general_speciality.svg',
-                  height: 40.h,
-                  width: 40.w,
-                ),
-              ),
-              verticalSpace(8.0),
-              Text('General', style: TextStyles.font12DarkBlueRegular),
-            ],
-          ),
+        itemCount: specializationDataList.length,
+        itemBuilder: (context, index) => DocSpecialityListViewItem(
+          specializationsData: specializationDataList[index],
+          itemIndex: index,
         ),
       ),
     );
