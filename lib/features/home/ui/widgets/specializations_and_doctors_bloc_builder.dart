@@ -20,12 +20,12 @@ class SetupSpecializationsAndDoctorsBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           specializationsLoading: () => setupLoading(),
-          specializationsSuccess: (specializationsResponseModel) {
-            var specializationList = specializationsResponseModel;
-            return setupSuccess(specializationList);
+          specializationsSuccess: (specializationDataList) {
+              var specializationsList = specializationDataList;
+              return setupSuccess(specializationsList);
           },
           specializationsError: (errorHandler) => setupError(),
-          orElse: () => setupError(),
+          orElse: () => const SizedBox.shrink(),
         );
       },
     );
@@ -42,7 +42,7 @@ class SetupSpecializationsAndDoctorsBlocBuilder extends StatelessWidget {
               child: Column(
                 children: [
                   DocSpecialityListView(
-                    specializationDataList: specializationList ?? const [],
+                    specializationDataList: specializationList ??  [],
                   ),
                   verticalSpace(8),
                   DocListView(doctorsList: specializationList?[0]?.doctorsList),

@@ -62,6 +62,7 @@ dependencies:
   #A build system for Dart code generation and modular compilation.
   build_runner: ^2.4.15
   firebase_core: ^3.14.0
+  shared_preferences: ^2.5.3
 
 
 

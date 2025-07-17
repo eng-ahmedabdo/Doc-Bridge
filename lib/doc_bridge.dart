@@ -1,3 +1,4 @@
+import 'package:doc_bridge/core/helper/constants.dart';
 import 'package:doc_bridge/core/routing/app_router.dart';
 import 'package:doc_bridge/core/routing/routes.dart';
 import 'package:doc_bridge/core/theming/colors.dart';
@@ -21,7 +22,7 @@ class DocBridge extends StatelessWidget {
           primaryColor: ColorsManager.mainBlue,
           scaffoldBackgroundColor: Colors.white,
         ),
-        initialRoute: Routes.onBoardingScreen,
+        initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
